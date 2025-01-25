@@ -1,9 +1,17 @@
 extends Node
 
 
-var positive_upgrade:Dictionary = {"recover health":CurrentHealthUpgrade.new()}
+var positive_upgrade:Dictionary = {
+"recover health":CurrentHealthUpgrade.new(),
+"nothing":UpgradeStrategyPattern,
+"bigger bullet":BulletSizeUpgrade.new(),
+"your bullet pierce":BulletPierceUpgrade.new()}
 
-var negative_upgrade:Dictionary = {"lose max health":NegativeMaxHealthUpgrade.new()}
+var negative_upgrade:Dictionary = {
+"lose max health":NegativeMaxHealthUpgrade.new(),
+"nothing":UpgradeStrategyPattern.new(),
+"go slower":NegativeSpeedUpgrade.new(),
+"shoot slower":NegativeShootTimer.new()}
 
 
 func get_random_positive_upgrade()->String:

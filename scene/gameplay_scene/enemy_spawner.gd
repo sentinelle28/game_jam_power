@@ -27,4 +27,4 @@ func _spawn_enemy()->void:
 
 func _on_timer_timeout() -> void:
 	_spawn_enemies()
-	$Timer.start(time_to_wait)
+	$Timer.start(EnvironnementVar.time_between_enemy)

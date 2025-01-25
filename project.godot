@@ -23,6 +23,7 @@ EnemyRef="*res://autoload/enemy_ref/enemy_ref.gd"
 DeathPanel="*res://autoload/pause_menu/death/death_panel.tscn"
 LevelUpMenu="*res://autoload/pause_menu/level_up/level_up_menu.tscn"
 UpgradeRef="*res://autoload/upgrade_ref/upgrade_ref.gd"
+EnvironnementVar="*res://autoload/environnement_stats/environnement_var.gd"
 
 [input]
 
