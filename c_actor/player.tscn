@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://ilu10aeoctvd"]
+
+[ext_resource type="Script" path="res://c_actor/player/player.gd" id="1_bmyl6"]
+[ext_resource type="Script" path="res://component/health_component/health_component.gd" id="3_c3b8q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tp12g"]
+font_size = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4x6w"]
+size = Vector2(20, 26)
+
+[node name="player" type="Area2D"]
+collision_mask = 6
+script = ExtResource("1_bmyl6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 18.0
+text = "0"
+label_settings = SubResource("LabelSettings_tp12g")
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_x4x6w")
+
+[node name="HealthComponent" type="Label" parent="."]
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = -9.0
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("3_c3b8q")
+
+[node name="DashTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
