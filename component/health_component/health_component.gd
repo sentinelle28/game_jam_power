@@ -1,6 +1,7 @@
 extends Label
 
 class_name HealthComponent
+signal death
 @export var max_health:int = 10
 @onready var health:int = max_health
 
@@ -10,7 +11,8 @@ func _ready() -> void:
 func _take_damage(damage:int)->void:
 	health -= damage
 	if health <= 0:
-		pass
+		emit_signal('death')
+	_show_health()
 
 func _show_health()->void:
 	text = str(health)

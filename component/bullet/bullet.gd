@@ -1,6 +1,7 @@
 extends Area2D
 
 class_name Bullet
+@export var pierce:int = 0
 @export var speed:int = 200
 @export var direction:Vector2
 @export var max_acceleration:float = 1.0

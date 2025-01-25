@@ -10,4 +10,6 @@ func _ready() -> void:
 
 
 func _deal_damage_to(area:Area2D)->void:
-	pass
+	if area is BaseActor:
+		area._take_damage(damage)
+		
