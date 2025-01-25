@@ -1,7 +1,7 @@
 extends Node
 
 var xp:int = 0
-var max_xp:int = 40
+var max_xp:int = 1
 var level:int = 1
 var mult_xp:float= 1.0
 var number_of_kill:int = 0

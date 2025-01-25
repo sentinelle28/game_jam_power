@@ -17,3 +17,9 @@ func _take_damage(damage:int)->void:
 
 func _show_health()->void:
 	text = str(health)
+
+func _update_max_health(new_max_health:int)->void:
+	if health > new_max_health:
+		health = new_max_health
+		max_health = new_max_health
+	_show_health()

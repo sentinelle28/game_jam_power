@@ -1,15 +1,14 @@
 extends CanvasLayer
 
-signal update_stats(name_of_teh:StringName,value)
+signal update_stats(updrade:UpgradeStrategyPattern)
 
 func _custom_show()->void:
 	show()
 	get_tree().paused = true
+	$upgrade_card._randomize()
+	$upgrade_card2._randomize()
+	$upgrade_card3._randomize()
 	
-	
-
-
-func _on_button_pressed() -> void:
+func _custom_hide():
 	hide()
 	get_tree().paused = false
-	emit_signal("update_stats","speed",100)
