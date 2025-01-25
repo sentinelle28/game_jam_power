@@ -14,6 +14,11 @@ config/name="game_jam_power"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Playerstats="*res://autoload/player_stats/playerstats.gd"
+StockerRef="*res://autoload/stocker_ref/stocker_ref.gd"
+
 [input]
 
 dash={
@@ -27,6 +32,7 @@ dash={
 2d_physics/layer_1="player"
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="power_up"
+2d_physics/layer_4="bullet"
 
 [rendering]
 

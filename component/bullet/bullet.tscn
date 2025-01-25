@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl5h4mwmvbr6l"]
+
+[ext_resource type="Script" path="res://component/bullet/bullet.gd" id="1_olnld"]
+[ext_resource type="Script" path="res://component/damage_component/damage_component.gd" id="2_sgiu7"]
+
+[node name="bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_olnld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("2_sgiu7")

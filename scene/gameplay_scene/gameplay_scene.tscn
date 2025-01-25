@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcs2wn2evyh26"]
+[gd_scene load_steps=5 format=3 uid="uid://dcs2wn2evyh26"]
 
+[ext_resource type="Script" path="res://scene/gameplay_scene/gameplay_scene.gd" id="1_675iu"]
 [ext_resource type="PackedScene" uid="uid://ilu10aeoctvd" path="res://c_actor/player.tscn" id="1_p24uq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvfds"]
+size = Vector2(1264, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vlyy"]
+size = Vector2(56, 682)
+
 [node name="gameplay_scene" type="Node2D"]
+script = ExtResource("1_675iu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -11,5 +19,29 @@ offset_right = 1160.0
 offset_bottom = 656.0
 color = Color(0, 0, 0, 1)
 
+[node name="bullet_stocker" type="Node" parent="."]
+
 [node name="player" parent="." instance=ExtResource("1_p24uq")]
 position = Vector2(496, 312)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(568, -24)
+shape = SubResource("RectangleShape2D_hvfds")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(576, 672)
+shape = SubResource("RectangleShape2D_hvfds")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-36, 331)
+shape = SubResource("RectangleShape2D_6vlyy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1184, 320)
+shape = SubResource("RectangleShape2D_6vlyy")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
