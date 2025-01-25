@@ -3,10 +3,11 @@ extends Label
 class_name HealthComponent
 signal death
 @export var max_health:int = 10
-@onready var health:int = max_health
+@export var health:int = 1
 
 func _ready() -> void:
-	text = str(health)
+	health = max_health
+	_show_health()
 
 func _take_damage(damage:int)->void:
 	health -= damage

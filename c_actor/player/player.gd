@@ -18,12 +18,26 @@ class_name Player
 @export var crit_change:int = 0
 @export var crit_damage:float = 2.0
 
+@export var bullet_pierce:int = 0
+@export var bullet_speed:int = 230
+
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
 	health_component.connect("death",_death)
+	LevelUpMenu.connect("update_stats",_update_stats)
+	_reset()
 	
 func _reset()->void:
-	pass
+	for property:StringName in Playerstats.player_properties:
+		set(property,Playerstats.player_properties[property])
+
+func _update_stats(statname:StringName,value)->void:
+	if statname in self:
+		var new_value = value + get(statname)
+		set(statname,new_value)
+	elif statname in health_component:
+		var new_value = value + health_component.get(statname)
+		health_component.set(statname,new_value)
 
 func _death()->void:
 	DeathPanel.emit_signal("player_is_dead")
