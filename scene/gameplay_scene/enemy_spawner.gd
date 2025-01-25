@@ -6,9 +6,13 @@ var time_to_wait:float = 5.0
 var max_to_spawn:int = 3
 var radius:int = 1200
 
+func _ready() -> void:
+	DeathPanel.connect("reset",_reset)
 
-
-	
+func _reset()->void:
+	for enemy:BaseEnemy in enemy_stocker.get_children():
+		enemy_stocker.call_deferred("remove_child",enemy)
+		
 func _spawn_enemies()->void:
 	for i in range(randi_range(1,max_to_spawn)):
 		_spawn_enemy()

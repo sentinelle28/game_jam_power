@@ -23,7 +23,7 @@ color = Color(0, 0, 0, 1)
 [node name="bullet_stocker" type="Node" parent="."]
 
 [node name="player" parent="." instance=ExtResource("1_p24uq")]
-position = Vector2(496, 312)
+position = Vector2(576, 320)
 
 [node name="bullet_boundary" type="Area2D" parent="."]
 collision_layer = 0

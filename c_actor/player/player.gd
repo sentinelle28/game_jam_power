@@ -18,6 +18,15 @@ class_name Player
 @export var crit_change:int = 0
 @export var crit_damage:float = 2.0
 
+func _ready() -> void:
+	DeathPanel.connect("reset",_reset)
+	health_component.connect("death",_death)
+	
+func _reset()->void:
+	pass
+
+func _death()->void:
+	DeathPanel.emit_signal("player_is_dead")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
