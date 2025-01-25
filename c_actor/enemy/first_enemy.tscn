@@ -9,6 +9,7 @@
 [node name="BaseEnemy" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_e4utm")
+speed = 150
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0

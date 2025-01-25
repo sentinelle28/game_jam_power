@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 Playerstats="*res://autoload/player_stats/playerstats.gd"
 StockerRef="*res://autoload/stocker_ref/stocker_ref.gd"
+PlayerXp="*res://autoload/xp/player_xp.gd"
 
 [input]
 

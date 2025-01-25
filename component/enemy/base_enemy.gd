@@ -1,8 +1,10 @@
 extends BaseActor
 
 class_name BaseEnemy
+@export_category("enemy_related")
+@export var xp_to_drop:int = 1
 func _ready() -> void:
-	health_component.connect("death",_on_death)
+	health_component.connect("death",_death_procedure)
 
 func get_target_point()->Vector2:
 	return StockerRef.get_player().global_position
@@ -16,6 +18,13 @@ func _process(delta: float) -> void:
 
 func _move(delta:float)->void:
 	pass
+
+func _death_procedure()->void:
+	_drop_xp()
+	_on_death()
+
+func _drop_xp()->void:
+	PlayerXp.xp += xp_to_drop
 
 func _on_death()->void:
 	call_deferred("queue_free")

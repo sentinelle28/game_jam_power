@@ -10,3 +10,6 @@ func _ready() -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Bullet:
 		area.call_deferred("queue_free")
+
+func _process(_delta: float) -> void:
+	$Label.set_text("FPS %d" % Engine.get_frames_per_second())

@@ -45,7 +45,13 @@ shape = SubResource("RectangleShape2D_6vlyy")
 position = Vector2(1184, 320)
 shape = SubResource("RectangleShape2D_6vlyy")
 
-[node name="BaseEnemy" parent="." instance=ExtResource("3_ifkq6")]
-position = Vector2(72, 96)
+[node name="enemy_stocker" type="Node2D" parent="."]
+
+[node name="BaseEnemy" parent="enemy_stocker" instance=ExtResource("3_ifkq6")]
+position = Vector2(744, 160)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]

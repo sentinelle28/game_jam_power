@@ -11,6 +11,8 @@ class_name Player
 @export var dash_invicibility_frame:float = 0.5
 @export var dash_recovery:float = 1.0
 
+@export var bullet_size:int = 1
+
 #to add
 @export var crit_change:int = 0
 @export var crit_damage:float = 2.0
