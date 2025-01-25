@@ -24,7 +24,7 @@ func _death_procedure()->void:
 	_on_death()
 
 func _drop_xp()->void:
-	PlayerXp.xp += xp_to_drop
+	PlayerXp._add_xp(xp_to_drop)
 
 func _on_death()->void:
 	call_deferred("queue_free")

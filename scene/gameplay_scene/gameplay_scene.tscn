@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scene/gameplay_scene/gameplay_scene.gd" id="1_675iu"]
 [ext_resource type="PackedScene" uid="uid://ilu10aeoctvd" path="res://c_actor/player/player.tscn" id="1_p24uq"]
-[ext_resource type="PackedScene" uid="uid://y3ggji4f2ywo" path="res://c_actor/enemy/first_enemy.tscn" id="3_ifkq6"]
+[ext_resource type="Script" path="res://scene/gameplay_scene/enemy_spawner.gd" id="4_y7hli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvfds"]
 size = Vector2(1264, 32)
@@ -47,11 +47,19 @@ shape = SubResource("RectangleShape2D_6vlyy")
 
 [node name="enemy_stocker" type="Node2D" parent="."]
 
-[node name="BaseEnemy" parent="enemy_stocker" instance=ExtResource("3_ifkq6")]
-position = Vector2(744, 160)
-
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="enemy_spawner" type="Node2D" parent="." node_paths=PackedStringArray("player", "enemy_stocker")]
+position = Vector2(576, 320)
+script = ExtResource("4_y7hli")
+player = NodePath("../player")
+enemy_stocker = NodePath("../enemy_stocker")
+
+[node name="Timer" type="Timer" parent="enemy_spawner"]
+one_shot = true
+autostart = true
+
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]

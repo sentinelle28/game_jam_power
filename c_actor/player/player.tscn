@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://ilu10aeoctvd"]
+[gd_scene load_steps=9 format=3 uid="uid://ilu10aeoctvd"]
 
 [ext_resource type="Script" path="res://c_actor/player/player.gd" id="1_bmyl6"]
 [ext_resource type="Script" path="res://component/bullet_creator/bullet_creator.gd" id="3_b4lqx"]
 [ext_resource type="Script" path="res://component/health_component/health_component.gd" id="3_c3b8q"]
 [ext_resource type="PackedScene" uid="uid://cwnemrsn4p6c7" path="res://c_actor/bullet/normal_bullet.tscn" id="4_rnrfc"]
+
+[sub_resource type="Gradient" id="Gradient_mbii0"]
+offsets = PackedFloat32Array(0, 0.375, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.376471, 0.376471, 0, 1, 2.98411e-06, 0.49292, 0.389744, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sbefw"]
+gradient = SubResource("Gradient_mbii0")
 
 [sub_resource type="LabelSettings" id="LabelSettings_tp12g"]
 font_size = 30
@@ -14,6 +21,7 @@ size = Vector2(20, 26)
 [node name="player" type="Area2D"]
 collision_mask = 6
 script = ExtResource("1_bmyl6")
+gradient_texture = SubResource("GradientTexture1D_sbefw")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -32.0

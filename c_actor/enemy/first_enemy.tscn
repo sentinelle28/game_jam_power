@@ -27,6 +27,7 @@ offset_bottom = -1.0
 text = "0"
 horizontal_alignment = 1
 script = ExtResource("2_31821")
+max_health = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kjphi")

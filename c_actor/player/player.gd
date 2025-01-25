@@ -5,6 +5,7 @@ class_name Player
 @onready var bullet_timer:Timer = $BulletTimer
 @onready var dashtimer:Timer = $DashTimer
 @onready var screen_size:Vector2 = get_viewport_rect().size
+@export var gradient_texture:GradientTexture1D
 
 @export var shooting_cooldown:float = 0.5
 @export var dash_mult:float = 2.0
@@ -17,10 +18,16 @@ class_name Player
 @export var crit_change:int = 0
 @export var crit_damage:float = 2.0
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_move(delta)
 	_shoot()
+	_update_color()
+
+func _update_color()->void:
+	var ratio:float = float(PlayerXp.xp)/float(PlayerXp.max_xp)
+	modulate = gradient_texture.gradient.sample(ratio)
 
 func _move(delta:float)->void:
 	var direction:Vector2 = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
