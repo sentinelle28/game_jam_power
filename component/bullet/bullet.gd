@@ -1,13 +1,16 @@
 extends Area2D
 
 class_name Bullet
-@export var speed:int 
+@export var speed:int = 200
 @export var direction:Vector2
-@export var lifetime:float
-@export var max_acceleration:float
+@export var max_acceleration:float = 1.0
 var current_acceleration:float = 1.0
 
+func _process(delta: float) -> void:
+	_move(delta)
 
-func _move()->void:
+func _move(delta: float)->void:
 	pass
 	
+func _set_direction(new_direction:Vector2)->void:
+	direction = new_direction

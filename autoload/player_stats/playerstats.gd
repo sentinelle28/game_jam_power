@@ -9,3 +9,4 @@ var dash_invicibility_frame:float = 0.5
 var dash_recovery:float = 1.0
 var crit_change:int = 0
 var crit_damage:float = 2.0
+var shooting_cooldown:float = 0.5

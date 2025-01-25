@@ -1,16 +1,24 @@
 extends BaseActor
+
+class_name Player
+@onready var bullet_creator:BulletCreator = $BulletCreator
+@onready var bullet_timer:Timer = $BulletTimer
 @onready var dashtimer:Timer = $DashTimer
 @onready var screen_size:Vector2 = get_viewport_rect().size
 
+@export var shooting_cooldown:float = 0.5
 @export var dash_mult:float = 2.0
 @export var dash_invicibility_frame:float = 0.5
 @export var dash_recovery:float = 1.0
+
+#to add
 @export var crit_change:int = 0
 @export var crit_damage:float = 2.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_move(delta)
+	_shoot()
 
 func _move(delta:float)->void:
 	var direction:Vector2 = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -36,3 +44,9 @@ func _on_dash_timer_timeout() -> void:
 	if is_invicible:
 		is_invicible = false
 		dashtimer.start(dash_recovery)
+
+func _shoot()->void:
+	if Input.is_action_just_pressed("shoot") and bullet_timer.time_left==0:
+		var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
+		bullet_creator._shoot(direction)
+		bullet_timer.start(shooting_cooldown)
