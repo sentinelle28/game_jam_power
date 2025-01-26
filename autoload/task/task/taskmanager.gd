@@ -23,7 +23,9 @@ func _gen_new_task()->void:
 	temp.clear()
 	
 	_init_task()
+	number_of_task_completed += 1
 	emit_signal("gen_new_task")
+	
 	
 func _init_task()->void:
 	for task:TaskStrategyPattern in current_task:

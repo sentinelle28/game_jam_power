@@ -22,5 +22,4 @@ func _update_task()->void:
 	
 func _on_task_complete()->void:
 	reward._apply_change(StockerRef.player)
-	Taskmanager.number_of_task_completed += 1
 	Taskmanager._gen_new_task()
