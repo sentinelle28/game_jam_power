@@ -31,6 +31,7 @@ EventListener="*res://autoload/task/event_listener/event_listener.gd"
 Taskmanager="*res://autoload/task/task/taskmanager.gd"
 TaskOverlay="*res://autoload/task/overlay/task_overlay.tscn"
 AudioController="*res://autoload/audio_controller/audioController.tscn"
+GlobalTimer="*res://autoload/global_timer/global_timer.tscn"
 
 [editor_plugins]
 

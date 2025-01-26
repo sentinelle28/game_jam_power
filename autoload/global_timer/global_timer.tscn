@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd8e1j232rs2s"]
+
+[ext_resource type="Script" path="res://autoload/global_timer/global_timer.gd" id="1_ypq7m"]
+
+[node name="global_timer" type="Node"]
+script = ExtResource("1_ypq7m")
