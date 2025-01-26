@@ -13,6 +13,12 @@ var negative_upgrade:Dictionary = {
 "go slower":NegativeSpeedUpgrade.new(),
 "shoot slower":NegativeShootTimer.new()}
 
+var mega_upgrade:Array[MegaUpgrage] = [MegaDefenseUpgrade.new(),
+MegaHealthRecoveryUpgrade.new()]
+
+
+func get_random_mega()->MegaUpgrage:
+	return mega_upgrade.pick_random()
 
 func get_random_positive_upgrade()->String:
 	return positive_upgrade.keys().pick_random()

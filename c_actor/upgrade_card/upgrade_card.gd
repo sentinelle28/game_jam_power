@@ -1,24 +1,16 @@
 extends Panel
 
 
-@export var positive_upgrade:UpgradeStrategyPattern
-@export var negative_upgrade:UpgradeStrategyPattern
-
-@export var positive_text:String
-@export var negative_text:String
+@export var positive_upgrade:MegaUpgrage
 
 func _ready() -> void:
 	_randomize()
 
 func _randomize()->void:
-	positive_text = UpgradeRef.get_random_positive_upgrade()
-	negative_text = UpgradeRef.get_random_negative_upgrade()
-	positive_upgrade = UpgradeRef.get_positive_upgrade(positive_text)
-	negative_upgrade = UpgradeRef.get_negative_upgrade(negative_text)
-	$VBoxContainer/positive.text = positive_text
-	$VBoxContainer/negative.text = negative_text
+	positive_upgrade = UpgradeRef.get_random_mega()
+	positive_upgrade._init_mega()
+	$positive.text = positive_upgrade.name_of_the_mega
 
 func _on_button_pressed() -> void:
-	LevelUpMenu.emit_signal("update_stats",positive_upgrade)
-	LevelUpMenu.emit_signal("update_stats",negative_upgrade)
+	positive_upgrade._apply_change(StockerRef.player)
 	LevelUpMenu._custom_hide()

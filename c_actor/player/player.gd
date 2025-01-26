@@ -24,7 +24,6 @@ class_name Player
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
 	health_component.connect("death",_death)
-	LevelUpMenu.connect("update_stats",_update_stats)
 	
 func _reset()->void:
 	for property:StringName in Playerstats.player_properties:

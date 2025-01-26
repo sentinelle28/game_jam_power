@@ -17,8 +17,12 @@ func _general_init()->void:
 func _personal_init()->void:
 	pass
 	
-func _update_task()->void:
+func _personnal_update_task()->void:
 	pass
+	
+func _update_task()->void:
+	_personnal_update_task()
+	EventListener.emit_signal("task_update")
 	
 func _on_task_complete()->void:
 	reward._apply_change(StockerRef.player)

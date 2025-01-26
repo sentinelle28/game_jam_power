@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-signal update_stats(updrade:UpgradeStrategyPattern)
 
 func _custom_show()->void:
 	show()

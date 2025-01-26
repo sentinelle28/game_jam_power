@@ -8,7 +8,7 @@ func _personal_init()->void:
 	name = "dash " + str(number_to_dash) + " times"
 	EventListener.connect("player_dash",_update_task)
 	
-func _update_task()->void:
+func _personnal_update_task()->void:
 	number_to_dash -= 1
 	if number_to_dash <= 0:
 		_on_task_complete()

@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bignhergkcf0m"]
+[gd_scene load_steps=5 format=3 uid="uid://bignhergkcf0m"]
 
 [ext_resource type="Script" path="res://c_actor/upgrade_card/upgrade_card.gd" id="1_w2hc0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn4aa"]
+bg_color = Color(0.306599, 0.341375, 0.495979, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.254762, 0.581727, 0.469953, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_4a444"]
+Panel/styles/panel = SubResource("StyleBoxFlat_wn4aa")
+
 [sub_resource type="LabelSettings" id="LabelSettings_pcg0t"]
 font_color = Color(0.331603, 0.732183, 1.54018e-06, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ib0uw"]
-font_color = Color(1, 0, 0, 1)
 
 [node name="upgrade_card" type="Panel"]
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
+theme = SubResource("Theme_4a444")
 script = ExtResource("1_w2hc0")
 
 [node name="Button" type="Button" parent="."]
@@ -24,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="positive" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,22 +46,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -56.0
-offset_top = -20.0
+offset_top = -11.5
 offset_right = 56.0
-offset_bottom = 56.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="positive" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+text = "dddddddd"
 label_settings = SubResource("LabelSettings_pcg0t")
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "But"
-
-[node name="negative" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_ib0uw")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
