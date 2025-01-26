@@ -14,13 +14,13 @@ var possible_task:Array[TaskStrategyPattern] = [
 
 func _gen_new_task()->void:
 	current_task.clear()
-	var temp:Array[TaskStrategyPattern] = []
-	for i:int in range(number_of_task_to_gen):
-		var current:TaskStrategyPattern = possible_task.pick_random()
-		while current in temp:
-			current = possible_task.pick_random()
-		temp.append(current)
-		current_task.append(current.duplicate())
+	var temp:Array[int] = []
+	for i:int in range(len(possible_task)):
+		temp.append(i)
+	for i:int in range(3):
+		var alea:int = temp.pick_random()
+		current_task.append(possible_task[alea].duplicate())
+		temp.erase(alea)
 	temp.clear()
 	
 	_init_task()
