@@ -47,7 +47,8 @@ shape = SubResource("RectangleShape2D_6vlyy")
 
 [node name="enemy_stocker" type="Node2D" parent="."]
 
-[node name="Label" type="Label" parent="."]
+[node name="fps_counter" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
@@ -60,6 +61,19 @@ enemy_stocker = NodePath("../enemy_stocker")
 [node name="Timer" type="Timer" parent="enemy_spawner"]
 one_shot = true
 autostart = true
+
+[node name="task_stocker" type="VBoxContainer" parent="."]
+offset_right = 192.0
+offset_bottom = 77.0
+
+[node name="taks_1" type="Label" parent="task_stocker"]
+layout_mode = 2
+
+[node name="task_2" type="Label" parent="task_stocker"]
+layout_mode = 2
+
+[node name="task_3" type="Label" parent="task_stocker"]
+layout_mode = 2
 
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]

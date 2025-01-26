@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://ilu10aeoctvd"]
 
 [ext_resource type="Script" path="res://c_actor/player/player.gd" id="1_bmyl6"]
-[ext_resource type="Script" path="res://component/bullet_creator/bullet_creator.gd" id="3_b4lqx"]
-[ext_resource type="Script" path="res://component/health_component/health_component.gd" id="3_c3b8q"]
+[ext_resource type="Script" path="res://component/bullet_related/bullet_creator/bullet_creator.gd" id="3_b4lqx"]
+[ext_resource type="Script" path="res://component/basic/health_component/health_component.gd" id="3_c3b8q"]
 [ext_resource type="PackedScene" uid="uid://cwnemrsn4p6c7" path="res://c_actor/bullet/normal_bullet.tscn" id="4_rnrfc"]
 
 [sub_resource type="Gradient" id="Gradient_mbii0"]

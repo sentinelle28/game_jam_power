@@ -11,10 +11,9 @@ func _ready() -> void:
 func _custom_show()->void:
 	
 	get_tree().paused = true
-	$Panel/VBoxContainer/Label.text = "You were level " + str(PlayerXp.level)
+	$Panel/VBoxContainer/Label.text = "You completed " + str(Taskmanager.number_of_task_completed)
 	#$Panel/VBoxContainer/Label2.text = "You survive  " + str(PlayerXp.number_of_kill)
-	$Panel/VBoxContainer/Label3.text = "You killed " + str(PlayerXp.number_of_kill)
-	print("receive")
+	#$Panel/VBoxContainer/Label3.text = "You killed " + str(PlayerXp.number_of_kill)
 	show()
 	
 
@@ -22,5 +21,6 @@ func _custom_show()->void:
 func _on_button_pressed() -> void:
 	hide()
 	get_tree().paused = false
-	PlayerXp._reset()
+	EnvironnementVar._reset()
+	Taskmanager._gen_new_task()
 	emit_signal("reset")

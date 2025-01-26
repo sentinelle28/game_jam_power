@@ -21,8 +21,6 @@ class_name Player
 @export var bullet_pierce:int = 0
 @export var bullet_speed:int = 230
 
-
-
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
 	health_component.connect("death",_death)
@@ -45,11 +43,7 @@ func _death()->void:
 func _process(delta: float) -> void:
 	_move(delta)
 	_shoot()
-	_update_color()
-
-func _update_color()->void:
-	var ratio:float = float(PlayerXp.xp)/float(PlayerXp.max_xp)
-	modulate = gradient_texture.gradient.sample(ratio)
+	
 
 func _move(delta:float)->void:
 	var direction:Vector2 = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -58,7 +52,12 @@ func _move(delta:float)->void:
 	else:
 		current_acceleration = lerp(current_acceleration,max_acceleration,0.1)
 		var dashmult:float = _dash()
-		global_position += direction* speed * current_acceleration * delta * dashmult
+		var movement:Vector2 = direction* speed * current_acceleration * delta * dashmult
+		
+		var distance_travel:float = global_position.distance_to(global_position+movement)
+		EventListener.emit_signal("player_walk",distance_travel)
+		
+		global_position += movement
 		global_position.x = wrapf(global_position.x,0,screen_size.x)
 		global_position.y = wrapf(global_position.y,0,screen_size.y)
 	
@@ -66,6 +65,7 @@ func _dash()->float:
 	if Input.is_action_just_pressed("dash") and $DashTimer.time_left == 0:
 		dashtimer.start(dash_invicibility_frame)
 		is_invicible = true
+		EventListener.emit_signal("player_dash")
 		return dash_mult
 	elif is_invicible:
 		return dash_mult
