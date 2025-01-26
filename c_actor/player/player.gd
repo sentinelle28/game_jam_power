@@ -54,7 +54,7 @@ func _move(delta:float)->void:
 		var dashmult:float = _dash()
 		var movement:Vector2 = direction* speed * current_acceleration * delta * dashmult
 		
-		var distance_travel:float = global_position.distance_to(global_position+movement)
+		var distance_travel:float = movement.length()
 		EventListener.emit_signal("player_walk",distance_travel)
 		
 		global_position += movement
