@@ -22,8 +22,10 @@ func _personnal_update_task()->void:
 	
 func _update_task()->void:
 	_personnal_update_task()
-	EventListener.emit_signal("task_update")
 	
 func _on_task_complete()->void:
 	reward._apply_change(StockerRef.player)
 	Taskmanager._gen_new_task()
+
+func _update_task_meter(new_message:String)->void:
+	TaskOverlay._update_specific_task_display(name,new_message)

@@ -25,6 +25,7 @@ UpgradeRef="*res://autoload/ref/upgrade_ref/upgrade_ref.gd"
 EnvironnementVar="*res://autoload/stats/environnement_stats/environnement_var.gd"
 EventListener="*res://autoload/task/event_listener/event_listener.gd"
 Taskmanager="*res://autoload/task/task/taskmanager.gd"
+TaskOverlay="*res://autoload/task/overlay/task_overlay.tscn"
 
 [input]
 

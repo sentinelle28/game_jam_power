@@ -11,4 +11,8 @@ func _custom_update_task(distance:float)->void:
 	distance_to_walk -= distance
 	if distance_to_walk <= 0:
 		_on_task_complete()
-	EventListener.emit_signal("task_update")
+	var new_text:String = "Walk " + str(int(distance_to_walk))
+	new_text += " "
+	new_text += "(" + name_of_the_reward + ")"
+	_update_task_meter(new_text)
+	
