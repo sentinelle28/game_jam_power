@@ -65,6 +65,7 @@ func _dash()->float:
 		dashtimer.start(dash_invicibility_frame)
 		is_invicible = true
 		EventListener.emit_signal("player_dash")
+		AudioController._play("dash")
 		return dash_mult
 	elif is_invicible:
 		return dash_mult
@@ -80,3 +81,4 @@ func _shoot()->void:
 		var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
 		bullet_creator._shoot(direction)
 		bullet_timer.start(shooting_cooldown)
+		AudioController._play("shoot")

@@ -9,5 +9,6 @@ func _custom_show()->void:
 	$upgrade_card3._randomize()
 	
 func _custom_hide():
+	AudioController._play("mega")
 	hide()
 	get_tree().paused = false

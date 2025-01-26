@@ -5,7 +5,11 @@ class_name BaseEnemy
 @export var xp_to_drop:int = 1
 func _ready() -> void:
 	health_component.connect("death",_death_procedure)
+	health_component.connect("took_damage",_on_damage_taken)
 
+func _on_damage_taken()->void:
+	AudioController._play("hit")
+	
 func get_target_point()->Vector2:
 	return StockerRef.get_player().global_position
 	

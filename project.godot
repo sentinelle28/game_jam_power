@@ -14,6 +14,10 @@ config/name="game_jam_power"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://asset/audio/default_bus_layout.tres"
+
 [autoload]
 
 Playerstats="*res://autoload/stats/player_stats/playerstats.gd"
@@ -26,6 +30,11 @@ EnvironnementVar="*res://autoload/stats/environnement_stats/environnement_var.gd
 EventListener="*res://autoload/task/event_listener/event_listener.gd"
 Taskmanager="*res://autoload/task/task/taskmanager.gd"
 TaskOverlay="*res://autoload/task/overlay/task_overlay.tscn"
+AudioController="*res://autoload/audio_controller/audioController.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_sfxr/plugin.cfg")
 
 [input]
 

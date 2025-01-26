@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://0f2r163l5eov"]
+
+[ext_resource type="Script" path="res://autoload/audio_controller/audio_controller.gd" id="1_1g7ex"]
+[ext_resource type="AudioStream" uid="uid://bwq45je5g8osk" path="res://asset/audio/hit.tres" id="2_sqh2y"]
+[ext_resource type="AudioStream" uid="uid://ocr8k6uqjs55" path="res://asset/audio/upgrade.tres" id="3_3pp6p"]
+[ext_resource type="AudioStream" uid="uid://cw8f1k4darvy4" path="res://asset/audio/mega_upgrade.tres" id="4_5h07d"]
+[ext_resource type="AudioStream" uid="uid://de1dw2tdciptx" path="res://asset/audio/shoot.tres" id="5_nqhkb"]
+[ext_resource type="AudioStream" uid="uid://canj700p121uv" path="res://asset/audio/dash.tres" id="6_yjlu6"]
+
+[node name="Audio" type="Node"]
+script = ExtResource("1_1g7ex")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sqh2y")
+bus = &"sfx"
+
+[node name="upgrade" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3pp6p")
+bus = &"sfx"
+
+[node name="mega_upgrade" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5h07d")
+bus = &"sfx"
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nqhkb")
+bus = &"sfx"
+
+[node name="dash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yjlu6")
+bus = &"sfx"
