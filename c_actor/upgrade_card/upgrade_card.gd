@@ -3,11 +3,9 @@ extends Panel
 
 @export var positive_upgrade:MegaUpgrage
 
-func _ready() -> void:
-	_randomize()
 
-func _randomize()->void:
-	positive_upgrade = UpgradeRef.get_random_mega()
+func _add_new_mega(mega:MegaUpgrage)->void:
+	positive_upgrade = mega
 	positive_upgrade._init_mega()
 	$positive.text = positive_upgrade.name_of_the_mega
 
