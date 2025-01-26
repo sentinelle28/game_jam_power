@@ -16,14 +16,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Playerstats="*res://autoload/player_stats/playerstats.gd"
-StockerRef="*res://autoload/stocker_ref/stocker_ref.gd"
-PlayerXp="*res://autoload/xp/player_xp.gd"
-EnemyRef="*res://autoload/enemy_ref/enemy_ref.gd"
+Playerstats="*res://autoload/stats/player_stats/playerstats.gd"
+StockerRef="*res://autoload/ref/stocker_ref/stocker_ref.gd"
+EnemyRef="*res://autoload/ref/enemy_ref/enemy_ref.gd"
 DeathPanel="*res://autoload/pause_menu/death/death_panel.tscn"
 LevelUpMenu="*res://autoload/pause_menu/level_up/level_up_menu.tscn"
-UpgradeRef="*res://autoload/upgrade_ref/upgrade_ref.gd"
-EnvironnementVar="*res://autoload/environnement_stats/environnement_var.gd"
+UpgradeRef="*res://autoload/ref/upgrade_ref/upgrade_ref.gd"
+EnvironnementVar="*res://autoload/stats/environnement_stats/environnement_var.gd"
+EventListener="*res://autoload/task/event_listener/event_listener.gd"
+Taskmanager="*res://autoload/task/task/taskmanager.gd"
 
 [input]
 
@@ -44,6 +45,7 @@ shoot={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="power_up"
 2d_physics/layer_4="bullet"
+2d_physics/layer_5="power_up"
 
 [rendering]
 

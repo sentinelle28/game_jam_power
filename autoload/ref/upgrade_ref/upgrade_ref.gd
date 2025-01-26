@@ -3,7 +3,7 @@ extends Node
 
 var positive_upgrade:Dictionary = {
 "recover health":CurrentHealthUpgrade.new(),
-"nothing":UpgradeStrategyPattern,
+"nothing":UpgradeStrategyPattern.new(),
 "bigger bullet":BulletSizeUpgrade.new(),
 "your bullet pierce":BulletPierceUpgrade.new()}
 
@@ -19,7 +19,7 @@ func get_random_positive_upgrade()->String:
 	
 func get_positive_upgrade(name_of_the_upgrade:String)->UpgradeStrategyPattern:
 	return positive_upgrade[name_of_the_upgrade]
-	
+
 func get_random_negative_upgrade()->String:
 	return negative_upgrade.keys().pick_random()
 	

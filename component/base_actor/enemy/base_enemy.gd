@@ -20,11 +20,10 @@ func _move(delta:float)->void:
 	pass
 
 func _death_procedure()->void:
-	_drop_xp()
 	_on_death()
+	EventListener.emit_signal("player_kill_enemy")
 
-func _drop_xp()->void:
-	PlayerXp._add_xp(xp_to_drop)
+
 
 func _on_death()->void:
 	call_deferred("queue_free")

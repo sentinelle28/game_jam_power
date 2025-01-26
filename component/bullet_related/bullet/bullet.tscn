@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl5h4mwmvbr6l"]
 
-[ext_resource type="Script" path="res://component/bullet/bullet.gd" id="1_olnld"]
-[ext_resource type="Script" path="res://component/damage_component/bullet_damage_component.gd" id="2_2y7mc"]
+[ext_resource type="Script" path="res://component/bullet_related/bullet/bullet.gd" id="1_olnld"]
+[ext_resource type="Script" path="res://component/basic/damage_component/bullet_damage_component.gd" id="2_2y7mc"]
 
 [node name="bullet" type="Area2D"]
 collision_layer = 8
