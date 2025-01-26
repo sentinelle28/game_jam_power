@@ -10,7 +10,8 @@ var current_task:Array[TaskStrategyPattern] = []
 var possible_task:Array[TaskStrategyPattern] = [
 	KillTask.new(),
 	Dash.new(),
-	WalkTask.new()] 
+	WalkTask.new(),
+	QuickKillTask.new()] 
 
 func _gen_new_task()->void:
 	current_task.clear()
@@ -22,7 +23,7 @@ func _gen_new_task()->void:
 		current_task.append(possible_task[alea].duplicate())
 		temp.erase(alea)
 	temp.clear()
-	
+	TaskOverlay._update_task_display()
 	_init_task()
 	_verif_artifact()
 	emit_signal("gen_new_task")
