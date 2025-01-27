@@ -33,7 +33,11 @@ func _verif_artifact()->void:
 	if number_of_task_completed%number_of_task_needed_for_artifact == 0:
 		LevelUpMenu._custom_show()
 		
+func _gen_a_new_task(name_of_the_task:String)->void:
+	pass
+	
 	
 func _init_task()->void:
-	for task:TaskStrategyPattern in current_task:
-		task._init_task()
+	var upgrades:Array[String] = UpgradeRef.get_random_upgrades()
+	for i:int in range(number_of_task_to_gen):
+		current_task[i]._init_task(UpgradeRef.get_positive_upgrade(upgrades[i]),upgrades[i])

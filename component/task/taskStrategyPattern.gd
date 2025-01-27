@@ -6,13 +6,13 @@ class_name TaskStrategyPattern
 @export var name_of_the_reward:String
 @export var name:String
 
-func _init_task()->void:
-	_general_init()
+func _init_task(n_reward:UpgradeStrategyPattern,name_reward:String)->void:
+	_general_init(n_reward,name_reward)
 	_personal_init()
 	
-func _general_init()->void:
-	name_of_the_reward = UpgradeRef.get_random_positive_upgrade()
-	reward = UpgradeRef.get_positive_upgrade(name_of_the_reward)
+func _general_init(n_reward:UpgradeStrategyPattern,name_reward:String)->void:
+	name_of_the_reward = name_reward
+	reward = n_reward
 	
 func _personal_init()->void:
 	pass

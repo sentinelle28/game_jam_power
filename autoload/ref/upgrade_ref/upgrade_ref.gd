@@ -28,6 +28,18 @@ func get_random_megas()->Array[MegaUpgrage]:
 		temp.erase(alea)
 	return to_send
 
+func get_random_upgrades()->Array[String]:
+	var temp:Array[String] = []
+	for i:String in positive_upgrade.keys():
+		temp.append(i)
+	var to_send:Array[String] = []
+	for i:int in range(3):
+		var alea:String = temp.pick_random()
+		to_send.append(alea)
+		temp.erase(alea)
+	return to_send
+
+
 func get_random_positive_upgrade()->String:
 	return positive_upgrade.keys().pick_random()
 	

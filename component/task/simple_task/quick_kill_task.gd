@@ -21,9 +21,3 @@ func _personnal_update_task()->void:
 			_on_task_complete()
 		else:
 			current_kill_count = 0
-
-	if current_kill_count > 0 :
-		var temp:String = "Kill "+ str(requiered_kill-current_kill_count) +" enemies in " 
-		temp += str(time_to_kill)
-		temp += " s"
-		_update_task_meter(temp)
