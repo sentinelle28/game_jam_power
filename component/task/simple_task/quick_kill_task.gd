@@ -21,3 +21,6 @@ func _personnal_update_task()->void:
 			_on_task_complete()
 		else:
 			current_kill_count = 0
+
+func get_strategy_name()->String:
+	return "quicl kill"

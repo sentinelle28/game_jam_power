@@ -39,7 +39,6 @@ func get_random_upgrades()->Array[String]:
 		temp.erase(alea)
 	return to_send
 
-
 func get_random_positive_upgrade()->String:
 	return positive_upgrade.keys().pick_random()
 	

@@ -25,7 +25,6 @@ func _gen_new_task()->void:
 	temp.clear()
 	TaskOverlay._update_task_display()
 	_init_task()
-	_verif_artifact()
 	emit_signal("gen_new_task")
 	
 func _verif_artifact()->void:
@@ -34,7 +33,38 @@ func _verif_artifact()->void:
 		LevelUpMenu._custom_show()
 		
 func _gen_a_new_task(name_of_the_task:String)->void:
-	pass
+	var index:int = 0
+	var to_not_pick:Array[String] = []
+	var reward_to_not_pick:Array[String] = []
+	for i:int in range(3):
+		if current_task[i].name == name_of_the_task:
+			index = i
+		to_not_pick.append(current_task[i].get_strategy_name())
+		reward_to_not_pick.append(current_task[i].name_of_the_reward)
+	
+	#select a new task
+	var task:Array[int] = []
+	for i:int in range(len(possible_task)):
+		if not possible_task[i].get_strategy_name() in to_not_pick:
+			task.append(i)
+		
+	
+	var picked:TaskStrategyPattern = possible_task[task.pick_random()].duplicate()
+	task.clear()
+	#select a new reward
+	
+	var reward:Array[String] = []
+	for i:int in range(len(UpgradeRef.positive_upgrade)):
+		if not UpgradeRef.positive_upgrade.keys()[i] in reward_to_not_pick:
+			reward.append(UpgradeRef.positive_upgrade.keys()[i])
+	var selected_name:String = reward.pick_random()
+	var seletec_reward:UpgradeStrategyPattern = UpgradeRef.get_positive_upgrade(selected_name)
+	reward.clear()
+	current_task[index] = picked
+	current_task[index]._init_task(seletec_reward,selected_name)
+	TaskOverlay._update_task_display()
+	_verif_artifact()
+	
 	
 	
 func _init_task()->void:

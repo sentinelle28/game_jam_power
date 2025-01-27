@@ -15,3 +15,6 @@ func _personnal_update_task()->void:
 	new_text += " enemies "
 	new_text += "(" + name_of_the_reward + ")"
 	_update_task_meter(new_text)
+
+func get_strategy_name()->String:
+	return "kill"

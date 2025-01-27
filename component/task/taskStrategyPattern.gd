@@ -26,7 +26,10 @@ func _update_task()->void:
 func _on_task_complete()->void:
 	reward._apply_change(StockerRef.player)
 	AudioController._play("upgrade")
-	Taskmanager._gen_new_task()
+	Taskmanager._gen_a_new_task(name)
 
 func _update_task_meter(new_message:String)->void:
 	TaskOverlay._update_specific_task_display(name,new_message)
+
+func get_strategy_name()->String:
+	return name
