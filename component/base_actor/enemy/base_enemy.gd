@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_damage_taken()->void:
 	AudioController._play("hit")
+	ParticleSpawner._spawn_particle(global_position)
 	
 func get_target_point()->Vector2:
 	return StockerRef.get_player().global_position

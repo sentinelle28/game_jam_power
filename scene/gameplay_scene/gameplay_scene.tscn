@@ -62,5 +62,7 @@ enemy_stocker = NodePath("../enemy_stocker")
 one_shot = true
 autostart = true
 
+[node name="particle_stocker" type="Node" parent="."]
+
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="enemy_spawner/Timer" to="enemy_spawner" method="_on_timer_timeout"]

@@ -32,6 +32,7 @@ Taskmanager="*res://autoload/task/task/taskmanager.gd"
 TaskOverlay="*res://autoload/task/overlay/task_overlay.tscn"
 AudioController="*res://autoload/audio_controller/audioController.tscn"
 GlobalTimer="*res://autoload/global_timer/global_timer.tscn"
+ParticleSpawner="*res://autoload/particle/particle_spawner.gd"
 
 [editor_plugins]
 

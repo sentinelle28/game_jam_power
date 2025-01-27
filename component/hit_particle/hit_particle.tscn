@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7dow6ohxoi1v"]
+
+[ext_resource type="Script" path="res://component/hit_particle/hit_particle.gd" id="1_0tt42"]
+
+[node name="hit_particle" type="CPUParticles2D"]
+emission_shape = 2
+emission_sphere_radius = 3.0
+spread = 180.0
+gravity = Vector2(0, 0)
+angular_velocity_max = 360.0
+scale_amount_min = 4.0
+scale_amount_max = 10.0
+color = Color(0.355314, 0.355314, 0.355314, 1)
+script = ExtResource("1_0tt42")

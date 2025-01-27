@@ -3,6 +3,7 @@ extends Node
 
 var bullet_stocker:Node
 var player:Player
+var particle_stocker:Node
 
 func _set_bullet_stocker(new_node:Node)->void:
 	bullet_stocker = new_node

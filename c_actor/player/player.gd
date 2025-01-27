@@ -55,7 +55,6 @@ func _move(delta:float)->void:
 		
 		var distance_travel:float = movement.length()
 		EventListener.emit_signal("player_walk",distance_travel)
-		
 		global_position += movement
 		global_position.x = wrapf(global_position.x,0,screen_size.x)
 		global_position.y = wrapf(global_position.y,0,screen_size.y)
