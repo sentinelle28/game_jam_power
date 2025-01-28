@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4843njprc7qq"]
+
+[ext_resource type="PackedScene" uid="uid://y3ggji4f2ywo" path="res://c_actor/enemy/first_enemy.tscn" id="1_rimaa"]
+
+[node name="Tank" instance=ExtResource("1_rimaa")]
+scale = Vector2(1.4, 1.4)
+speed = 100
+
+[node name="Label" parent="." index="0"]
+text = "3"
+
+[node name="DamageComponent" parent="." index="3"]
+damage = 3

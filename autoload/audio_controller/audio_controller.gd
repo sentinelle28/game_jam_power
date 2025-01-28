@@ -12,3 +12,5 @@ func _play(name_of_sfx:String)->void:
 			$shoot.play()
 		"dash":
 			$dash.play()
+		"enemy shoot":
+			$enemy_shoot.play()

@@ -23,7 +23,6 @@ func _gen_new_task()->void:
 		current_task.append(possible_task[alea].duplicate())
 		temp.erase(alea)
 	temp.clear()
-	TaskOverlay._update_task_display()
 	_init_task()
 	emit_signal("gen_new_task")
 	
@@ -62,9 +61,8 @@ func _gen_a_new_task(name_of_the_task:String)->void:
 	reward.clear()
 	current_task[index] = picked
 	current_task[index]._init_task(seletec_reward,selected_name)
-	TaskOverlay._update_task_display()
 	_verif_artifact()
-	
+	emit_signal("gen_new_task")
 	
 	
 func _init_task()->void:

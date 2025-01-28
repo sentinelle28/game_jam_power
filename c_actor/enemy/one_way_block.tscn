@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnqya42njg26n"]
+
+[ext_resource type="Script" path="res://c_actor/enemy/one_way_block.gd" id="1_d0gen"]
+[ext_resource type="Script" path="res://component/basic/health_component/health_component.gd" id="2_acl43"]
+[ext_resource type="Script" path="res://component/basic/damage_component/damage_component.gd" id="3_ib6tg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_saewj"]
+font_size = 25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ysy"]
+
+[node name="One_way_block" type="Area2D"]
+modulate = Color(1, 0, 0, 1)
+collision_layer = 2
+script = ExtResource("1_d0gen")
+speed = 110
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -18.0
+offset_right = 20.0
+offset_bottom = 17.0
+text = "2"
+label_settings = SubResource("LabelSettings_saewj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthComponent" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -26.0
+offset_right = 30.0
+offset_bottom = -3.0
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_acl43")
+max_health = 4
+
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("3_ib6tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d1ysy")

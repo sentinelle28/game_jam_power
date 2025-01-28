@@ -1,11 +1,10 @@
 extends BaseActor
 
 class_name BaseEnemy
-@export_category("enemy_related")
-@export var xp_to_drop:int = 1
 func _ready() -> void:
 	health_component.connect("death",_death_procedure)
 	health_component.connect("took_damage",_on_damage_taken)
+	connect("area_entered",_on_area_entered)
 
 func _on_damage_taken()->void:
 	AudioController._play("hit")
@@ -28,6 +27,10 @@ func _death_procedure()->void:
 	_on_death()
 	EventListener.emit_signal("player_kill_enemy")
 
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Player:
+		call_deferred("queue_free")
 
 
 func _on_death()->void:

@@ -20,7 +20,7 @@ func _spawn_enemies()->void:
 func _spawn_enemy()->void:
 	var x:float = randf_range(-1,1)
 	var y:float = randf_range(-1,1)
-	var new_enemy:BaseEnemy = EnemyRef.get_random_enemy(0)
+	var new_enemy:BaseEnemy = EnemyRef.get_random_enemy()
 	enemy_stocker.add_child(new_enemy)
 	new_enemy.global_position = global_position + Vector2(x,y)*radius
 
