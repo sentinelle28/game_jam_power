@@ -10,4 +10,4 @@ speed = 100
 text = "3"
 
 [node name="DamageComponent" parent="." index="3"]
-damage = 3
+damage = 5

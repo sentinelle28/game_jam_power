@@ -2,17 +2,17 @@ extends TaskStrategyPattern
 class_name QuickKillTask
 
 var last_kill:float
-var time_to_kill:float = 1.0
+var time_to_kill:float = 1.5
 
 var requiered_kill:int = 2
 var current_kill_count:int = 0
 
 func _personal_init()->void:
+	EventListener.connect("player_kill_enemy",_personnal_update_task)
+	requiered_kill += int(Taskmanager.number_of_task_completed/5)
+	time_to_kill += int(EnvironnementVar.difficulty)/10
 	name = "Kill "+ str(requiered_kill) +" enemies in " + str(time_to_kill)
 	name += " s"
-	EventListener.connect("player_kill_enemy",_personnal_update_task)
-	requiered_kill *= EnvironnementVar.difficulty
-	time_to_kill += roundf(EnvironnementVar.difficulty)/10
 	
 	
 func _personnal_update_task()->void:

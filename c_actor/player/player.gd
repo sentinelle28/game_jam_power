@@ -24,6 +24,10 @@ class_name Player
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
 	health_component.connect("death",_death)
+	health_component.connect("took_damage",_on_hit)
+	
+func _on_hit()->void:
+	AudioController._play("player hit")
 	
 func _reset()->void:
 	for property:StringName in Playerstats.player_properties:
@@ -76,8 +80,9 @@ func _on_dash_timer_timeout() -> void:
 		dashtimer.start(dash_recovery)
 
 func _shoot()->void:
-	if Input.is_action_just_pressed("shoot") and bullet_timer.time_left==0:
-		var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
-		bullet_creator._shoot(direction)
-		bullet_timer.start(shooting_cooldown)
-		AudioController._play("shoot")
+	if Input.is_action_pressed("shoot") or Input.is_action_just_pressed("shoot"):
+		if bullet_timer.time_left == 0:
+			var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
+			bullet_creator._shoot(direction)
+			bullet_timer.start(shooting_cooldown)
+			AudioController._play("shoot")

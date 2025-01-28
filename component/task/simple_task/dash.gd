@@ -5,9 +5,9 @@ class_name Dash
 var number_to_dash:int = 5
 
 func _personal_init()->void:
-	name = "dash " + str(number_to_dash) + " times"
 	EventListener.connect("player_dash",_update_task)
-	number_to_dash *= EnvironnementVar.difficulty
+	number_to_dash += Taskmanager.number_of_task_completed
+	name = "dash " + str(number_to_dash) + " times"
 	
 func _personnal_update_task()->void:
 	number_to_dash -= 1

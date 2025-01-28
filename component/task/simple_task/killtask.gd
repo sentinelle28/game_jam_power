@@ -4,9 +4,9 @@ class_name KillTask
 @export var number_to_kill:int = 3
 
 func _personal_init()->void:
-	name = "Kill 3 enemies"
 	EventListener.connect("player_kill_enemy",_update_task)
-	number_to_kill *= EnvironnementVar.difficulty
+	number_to_kill += Taskmanager.number_of_task_completed
+	name = "Kill " + str(number_to_kill) + " enemies"
 	
 func _personnal_update_task()->void:
 	number_to_kill -= 1
