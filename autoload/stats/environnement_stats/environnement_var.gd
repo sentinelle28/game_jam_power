@@ -2,14 +2,12 @@ extends Node
 
 
 var time_between_enemy:float = 1.5
-
-var difficulty_scaling:float = 0.25
-
 var difficulty:float = 1
 var power_spawn_time:float = 3.0
 
-var spawn_time_scale:float = 0.35 #x/2
-var heigh_time_scale:float = 1.15
+const difficulty_scaling:float = 0.25
+const spawn_time_scale:float = 0.35 #x/2
+const heigh_time_scale:float = 1.15
 
 func _reset()->void:
 	time_between_enemy = 1.5

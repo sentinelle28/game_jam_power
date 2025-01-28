@@ -6,6 +6,7 @@ class_name KillTask
 func _personal_init()->void:
 	name = "Kill 3 enemies"
 	EventListener.connect("player_kill_enemy",_update_task)
+	number_to_kill *= EnvironnementVar.difficulty
 	
 func _personnal_update_task()->void:
 	number_to_kill -= 1

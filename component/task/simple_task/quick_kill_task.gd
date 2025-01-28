@@ -11,6 +11,9 @@ func _personal_init()->void:
 	name = "Kill "+ str(requiered_kill) +" enemies in " + str(time_to_kill)
 	name += " s"
 	EventListener.connect("player_kill_enemy",_personnal_update_task)
+	requiered_kill *= EnvironnementVar.difficulty
+	time_to_kill += roundf(EnvironnementVar.difficulty)/10
+	
 	
 func _personnal_update_task()->void:
 	if current_kill_count == 0:

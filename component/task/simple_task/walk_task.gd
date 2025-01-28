@@ -5,6 +5,7 @@ class_name WalkTask
 @export var distance_to_walk:float = 5000
 func _personal_init()->void:
 	name = "Walk " + str(distance_to_walk)
+	distance_to_walk *= EnvironnementVar.difficulty
 	EventListener.connect("player_walk",_custom_update_task)
 	
 func _custom_update_task(distance:float)->void:
