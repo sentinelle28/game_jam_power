@@ -14,3 +14,4 @@ func _custom_hide():
 	AudioController._play("mega")
 	hide()
 	get_tree().paused = false
+	EnvironnementVar._change_difficulty()

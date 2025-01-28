@@ -69,3 +69,12 @@ func _init_task()->void:
 	var upgrades:Array[String] = UpgradeRef.get_random_upgrades()
 	for i:int in range(number_of_task_to_gen):
 		current_task[i]._init_task(UpgradeRef.get_positive_upgrade(upgrades[i]),upgrades[i])
+
+
+func _update_task_requiered()->void:
+	number_of_task_needed_for_artifact =get_new_task_for_artifact(EnvironnementVar.difficulty)
+	
+func get_new_task_for_artifact(value:float)->int:
+	var calc_value:float = 0.25*(value**2) + 3
+	return int(calc_value)
+	

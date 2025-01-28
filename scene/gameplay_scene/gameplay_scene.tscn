@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcs2wn2evyh26"]
+[gd_scene load_steps=8 format=3 uid="uid://dcs2wn2evyh26"]
 
 [ext_resource type="Script" path="res://scene/gameplay_scene/gameplay_scene.gd" id="1_675iu"]
 [ext_resource type="PackedScene" uid="uid://ilu10aeoctvd" path="res://c_actor/player/player.tscn" id="1_p24uq"]
 [ext_resource type="Script" path="res://scene/gameplay_scene/enemy_spawner.gd" id="4_y7hli"]
-[ext_resource type="PackedScene" uid="uid://bxh2rv6s1amt6" path="res://c_actor/enemy/shooter.tscn" id="4_yt7n8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1111"]
 size = Vector2(66, 1287)
@@ -89,9 +88,6 @@ offset_bottom = 23.0
 
 [node name="player" parent="." instance=ExtResource("1_p24uq")]
 position = Vector2(576, 320)
-
-[node name="Shooter" parent="." instance=ExtResource("4_yt7n8")]
-position = Vector2(272, 368)
 
 [connection signal="area_entered" from="enemy_boundary" to="." method="_on_enemy_boundary_area_entered"]
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]
