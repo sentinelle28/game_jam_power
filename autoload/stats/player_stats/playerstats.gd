@@ -12,6 +12,7 @@ var shooting_cooldown:float = 0.5
 var bullet_size:int = 1
 var bullet_speed:int = 230
 var bullet_pierce:int = 0
+var bullet_to_shoot:int = 1
 
 var player_properties:Dictionary = {"speed":speed,
 "max_acceleration":max_acceleration,
@@ -23,4 +24,5 @@ var player_properties:Dictionary = {"speed":speed,
 "shooting_cooldown":shooting_cooldown,
 "bullet_size":bullet_size,
 "bullet_speed":bullet_speed,
-"bullet_pierce":bullet_pierce}
+"bullet_pierce":bullet_pierce,
+"bullet_to_shoot":bullet_to_shoot}

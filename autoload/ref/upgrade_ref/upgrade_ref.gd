@@ -3,9 +3,10 @@ extends Node
 
 var positive_upgrade:Dictionary = {
 "recover health":CurrentHealthUpgrade.new(),
-"nothing":UpgradeStrategyPattern.new(),
+"explode":ExplodeOnHit.new(),
 "bigger bullet":BulletSizeUpgrade.new(),
-"your bullet pierce":BulletPierceUpgrade.new()}
+"your bullet pierce":BulletPierceUpgrade.new(),
+"dashshoot":ShootOnDash.new()}
 
 var negative_upgrade:Dictionary = {
 "lose max health":NegativeMaxHealthUpgrade.new(),

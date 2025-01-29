@@ -20,6 +20,12 @@ class_name Player
 
 @export var bullet_pierce:int = 0
 @export var bullet_speed:int = 230
+@export var bullet_to_shoot:int = 1
+
+
+
+var on_player_hit_upgrade:Array[OnPlayerHitUpgrade] = []
+var on_player_dash:Array[OnPlayerDash] = []
 
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
@@ -28,10 +34,15 @@ func _ready() -> void:
 	
 func _on_hit()->void:
 	AudioController._play("player hit")
+	for elt:OnPlayerHitUpgrade in on_player_hit_upgrade:
+		elt._apply_change(self)
+	
 	
 func _reset()->void:
 	for property:StringName in Playerstats.player_properties:
 		set(property,Playerstats.player_properties[property])
+	on_player_hit_upgrade.clear()
+	on_player_dash.clear()
 
 func _update_stats(upgrade:UpgradeStrategyPattern)->void:
 	if upgrade is HealthUpgrade:
@@ -83,6 +94,11 @@ func _shoot()->void:
 	if Input.is_action_pressed("shoot") or Input.is_action_just_pressed("shoot"):
 		if bullet_timer.time_left == 0:
 			var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
-			bullet_creator._shoot(direction)
-			bullet_timer.start(shooting_cooldown)
-			AudioController._play("shoot")
+			_shoot_toward(direction)
+
+
+func _shoot_toward(direction:Vector2):
+	for i:int in range(bullet_to_shoot):
+		bullet_creator._shoot(direction)
+		bullet_timer.start(shooting_cooldown)
+		AudioController._play("shoot")

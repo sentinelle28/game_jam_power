@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0f2r163l5eov"]
+[gd_scene load_steps=10 format=3 uid="uid://0f2r163l5eov"]
 
 [ext_resource type="Script" path="res://autoload/audio_controller/audio_controller.gd" id="1_1g7ex"]
 [ext_resource type="AudioStream" uid="uid://bwq45je5g8osk" path="res://asset/audio/hit.tres" id="2_sqh2y"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://canj700p121uv" path="res://asset/audio/dash.tres" id="6_yjlu6"]
 [ext_resource type="AudioStream" uid="uid://dbitnmyjkwfi5" path="res://asset/audio/shoot_enemu.tres" id="7_0sfga"]
 [ext_resource type="AudioStream" uid="uid://cffhwuyaqvgvh" path="res://asset/audio/player_hit.tres" id="8_yuwv8"]
+[ext_resource type="AudioStream" uid="uid://uyxr1citgpf2" path="res://asset/audio/explosion_bis.tres" id="9_64ges"]
 
 [node name="Audio" type="Node"]
 script = ExtResource("1_1g7ex")
@@ -37,3 +38,6 @@ stream = ExtResource("7_0sfga")
 
 [node name="player_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_yuwv8")
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_64ges")

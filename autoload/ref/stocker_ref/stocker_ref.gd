@@ -1,6 +1,6 @@
 extends Node
 
-
+var enemy_stocker:Node
 var bullet_stocker:Node
 var player:Player
 var particle_stocker:Node

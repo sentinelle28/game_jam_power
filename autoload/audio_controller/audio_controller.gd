@@ -16,3 +16,5 @@ func _play(name_of_sfx:String)->void:
 			$enemy_shoot.play()
 		"player hit":
 			$player_hit.play()
+		"explosion":
+			$explosion.play()

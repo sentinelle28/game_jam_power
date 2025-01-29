@@ -6,6 +6,8 @@ class_name TaskStrategyPattern
 @export var name_of_the_reward:String
 @export var name:String
 
+var is_already_triggered:bool = false
+
 func _init_task(n_reward:UpgradeStrategyPattern,name_reward:String)->void:
 	_general_init(n_reward,name_reward)
 	_personal_init()
@@ -24,9 +26,12 @@ func _update_task()->void:
 	_personnal_update_task()
 	
 func _on_task_complete()->void:
-	reward._apply_change(StockerRef.player)
-	AudioController._play("upgrade")
-	Taskmanager._gen_a_new_task(name)
+	if not is_already_triggered:
+		is_already_triggered = true
+		reward._apply_change(StockerRef.player)
+		Taskmanager._gen_a_new_task(name)
+		AudioController._play("upgrade")
+		
 	
 
 func _update_task_meter(new_message:String)->void:
