@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	StockerRef._set_bullet_stocker($bullet_stocker)
 	StockerRef._set_player($player)
+	StockerRef.enemy_stocker = $enemy_stocker
 	StockerRef.particle_stocker = $particle_stocker
 	Taskmanager._gen_new_task()
 	GlobalTimer._start()
