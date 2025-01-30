@@ -1,4 +1,4 @@
-extends UpgradeStrategyPattern
+extends MegaUpgrage
 
 class_name OnPlayerHitUpgrade
 var is_in_player:bool = false

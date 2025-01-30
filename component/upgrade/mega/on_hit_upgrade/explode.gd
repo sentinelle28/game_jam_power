@@ -15,3 +15,6 @@ func _apply_custom(target:Player)->void:
 	StockerRef.particle_stocker.add_child(particle)
 	particle.global_position = player_pos
 	AudioController._play("explosion")
+
+func _init_mega()->void:
+	name_of_the_mega = "explode on hit"

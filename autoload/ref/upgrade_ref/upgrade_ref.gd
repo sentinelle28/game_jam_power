@@ -3,7 +3,6 @@ extends Node
 
 var positive_upgrade:Dictionary = {
 "recover health":CurrentHealthUpgrade.new(),
-"explode":ExplodeOnHit.new(),
 "bigger bullet":BulletSizeUpgrade.new(),
 "your bullet pierce":BulletPierceUpgrade.new(),
 "dashshoot":ShootOnDash.new()}
@@ -15,7 +14,7 @@ var negative_upgrade:Dictionary = {
 "shoot slower":NegativeShootTimer.new()}
 
 var mega_upgrade:Array[MegaUpgrage] = [MegaDefenseUpgrade.new(),
-MegaHealthRecoveryUpgrade.new(),MegaShootingCoolDown.new()]
+MegaHealthRecoveryUpgrade.new(),MegaShootingCoolDown.new(),ExplodeOnHit.new()]
 
 
 func get_random_megas()->Array[MegaUpgrage]:
