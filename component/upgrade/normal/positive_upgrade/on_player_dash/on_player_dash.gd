@@ -14,6 +14,6 @@ func _apply_custom(target:Player)->void:
 	
 func _init_upgrade(target:Player)->void:
 	if not is_in_player:
-		var new_upgrade:OnPlayerHitUpgrade = self.duplicate()
+		var new_upgrade:OnPlayerDash = self.duplicate()
 		new_upgrade.is_in_player = true
 		target.on_player_dash.append(new_upgrade)
