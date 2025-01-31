@@ -61,8 +61,9 @@ func _gen_a_new_task(name_of_the_task:String)->void:
 	reward.clear()
 	current_task[index] = picked
 	current_task[index]._init_task(seletec_reward,selected_name)
+	TaskOverlay._reset_specific(current_task[index].name)
 	_verif_artifact()
-	emit_signal("gen_new_task")
+	
 	
 	
 func _init_task()->void:

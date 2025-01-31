@@ -20,6 +20,7 @@ func _personnal_update_task()->void:
 		last_kill = GlobalTimer.get_time()
 	current_kill_count += 1
 	if current_kill_count >= requiered_kill:
+		TaskOverlay._update_specific_task_display(name,name)
 		if GlobalTimer.get_time() - last_kill <= time_to_kill:
 			_on_task_complete()
 		else:
