@@ -6,9 +6,9 @@ func _custom_show()->void:
 	get_tree().paused = true
 	var to_send:Array[MegaUpgrage] = UpgradeRef.get_random_megas()
 	
-	$upgrade_card._add_new_mega(to_send[0])
-	$upgrade_card2._add_new_mega(to_send[1])
-	$upgrade_card3._add_new_mega(to_send[2])
+	$Panel/HBoxContainer/upgrade_card._add_new_mega(to_send[0])
+	$Panel/HBoxContainer/upgrade_card2._add_new_mega(to_send[1])
+	$Panel/HBoxContainer/upgrade_card3._add_new_mega(to_send[2])
 	
 func _custom_hide():
 	AudioController._play("mega")

@@ -9,5 +9,8 @@ speed = 100
 [node name="Label" parent="." index="0"]
 text = "3"
 
+[node name="HealthComponent" parent="." index="1"]
+max_health = 10
+
 [node name="DamageComponent" parent="." index="3"]
 damage = 5

@@ -23,7 +23,7 @@ expand_margin_bottom = 3.0
 Panel/styles/panel = SubResource("StyleBoxFlat_hl08h")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mbqm6"]
-font_size = 30
+font_size = 20
 
 [node name="level_up_menu" type="CanvasLayer"]
 process_mode = 2

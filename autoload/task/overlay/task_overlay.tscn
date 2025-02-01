@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh7b63b3h70m"]
+[gd_scene load_steps=3 format=3 uid="uid://dh7b63b3h70m"]
 
 [ext_resource type="Script" path="res://autoload/task/overlay/task_overlay.gd" id="1_ocuf8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6maxk"]
+font_size = 12
 
 [node name="task_overlay" type="CanvasLayer"]
 script = ExtResource("1_ocuf8")
@@ -11,9 +14,12 @@ offset_bottom = 77.0
 
 [node name="task_1" type="Label" parent="task_stocker"]
 layout_mode = 2
+label_settings = SubResource("LabelSettings_6maxk")
 
 [node name="task_2" type="Label" parent="task_stocker"]
 layout_mode = 2
+label_settings = SubResource("LabelSettings_6maxk")
 
 [node name="task_3" type="Label" parent="task_stocker"]
 layout_mode = 2
+label_settings = SubResource("LabelSettings_6maxk")
