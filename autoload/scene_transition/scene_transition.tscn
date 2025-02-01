@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://7i57jmvcyqy1"]
+
+[ext_resource type="Texture2D" uid="uid://c3ni5ak1wsfmd" path="res://asset/sprite/intro_image.png" id="1_bewwu"]
+[ext_resource type="Script" path="res://autoload/scene_transition/scene_transition.gd" id="1_figpo"]
+
+[sub_resource type="Animation" id="Animation_j1dx6"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(148, 43), Vector2(80, -33), Vector2(-112, -257)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(184, 184), Vector2(328, 328), Vector2(744, 744)]
+}
+
+[sub_resource type="Animation" id="Animation_ojgyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(148, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, 184)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37b1a"]
+_data = {
+"RESET": SubResource("Animation_ojgyj"),
+"transition": SubResource("Animation_j1dx6")
+}
+
+[node name="SceneTransition" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_figpo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 496.0
+offset_bottom = 280.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 92.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bewwu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_37b1a")
+}

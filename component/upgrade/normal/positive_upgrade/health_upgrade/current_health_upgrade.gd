@@ -2,6 +2,11 @@ extends HealthUpgrade
 
 class_name CurrentHealthUpgrade
 func _apply_change(target:Node)->void:
+	var n_target:HealthComponent
+	if target is Player:
+		n_target = target.health_component
+	
 	if target is HealthComponent:
-		target.health += health_value
-		target.health = clampi(target.health,0,target.max_health)
+		n_target = target
+		n_target.health += health_value
+		n_target.health = clampi(n_target.health,0,n_target.max_health)

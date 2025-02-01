@@ -8,3 +8,8 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_button_2_pressed() -> void:
+	AudioController._play("click")
+	SceneTransition._change_scene("res://scene/tutorial/tutorial.tscn")
