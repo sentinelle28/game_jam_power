@@ -12,7 +12,8 @@ var possible_task:Array[TaskStrategyPattern] = [
 	Dash.new(),
 	WalkTask.new(),
 	QuickKillTask.new(),
-	SurviveTask.new()] 
+	SurviveTask.new(),
+	DontShoot.new()] 
 
 func _gen_new_task()->void:
 	current_task.clear()

@@ -105,6 +105,7 @@ func _shoot()->void:
 			_shoot_toward(direction)
 			bullet_timer.start(shooting_cooldown)
 			AudioController._play("shoot")
+			EventListener.emit_signal("player_shoot")
 
 
 func _shoot_toward(direction:Vector2):
