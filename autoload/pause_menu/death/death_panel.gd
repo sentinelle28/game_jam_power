@@ -12,7 +12,9 @@ func _custom_show()->void:
 	
 	get_tree().paused = true
 	$Panel/VBoxContainer/Label.text = "You completed " + str(Taskmanager.number_of_task_completed)
-	$Panel/VBoxContainer/Label2.text = "You survive  " + str(int(GlobalTimer.get_time())) +"s"
+	$Panel/VBoxContainer/Label2.text = "You survive  " 
+	$Panel/VBoxContainer/Label2.text += str(GlobalTimer.minute) +":"
+	$Panel/VBoxContainer/Label2.text += str(int(GlobalTimer.get_time())) +"s"
 	#$Panel/VBoxContainer/Label3.text = "You killed " + 
 	show()
 	

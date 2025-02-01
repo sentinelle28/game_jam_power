@@ -5,7 +5,8 @@ var positive_upgrade:Dictionary = {
 "recover health":CurrentHealthUpgrade.new(),
 "bigger bullet":BulletSizeUpgrade.new(),
 "your bullet pierce":BulletPierceUpgrade.new(),
-"dashshoot":ShootOnDash.new()}
+"dashshoot":ShootOnDash.new(),
+"More max health":MaxHealthUpgrade.new()}
 
 var negative_upgrade:Dictionary = {
 "lose max health":NegativeMaxHealthUpgrade.new(),

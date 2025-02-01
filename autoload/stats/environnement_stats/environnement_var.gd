@@ -19,7 +19,10 @@ func _change_difficulty()->void:
 	Taskmanager._update_task_requiered()
 	
 func _update_difficulty(time:float)->void:
-	time_between_enemy = get_spawn_value(time)
+	if GlobalTimer.minute <= 4:
+		time_between_enemy = get_spawn_value(time)
+	else:
+		time_between_enemy = 0.7
 	
 
 func _augment_difficulty(to_add:float)->void:
