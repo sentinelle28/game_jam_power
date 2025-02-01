@@ -7,7 +7,8 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	AudioController._play("click")
+	SceneTransition._change_scene("res://scene/gameplay_scene/gameplay_scene.tscn")
 
 
 func _on_button_2_pressed() -> void:

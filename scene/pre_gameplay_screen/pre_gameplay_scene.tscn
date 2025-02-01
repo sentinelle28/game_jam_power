@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b7aoyjh5n803f"]
+
+[node name="pre_gameplay_scene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 488.0
+offset_bottom = 288.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

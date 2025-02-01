@@ -38,6 +38,7 @@ func _on_hit()->void:
 		elt._apply_change(self)
 	if health_component.health <= 2:
 		AudioController._play("one hp")
+	EventListener.emit_signal("player_take_damage")
 	
 func _on_dash()->void:
 	for elt:OnPlayerDash in on_player_dash:

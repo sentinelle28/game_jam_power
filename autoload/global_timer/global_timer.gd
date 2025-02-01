@@ -7,6 +7,7 @@ var can_process_time:bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if can_process_time:
+		EventListener.emit_signal("time_passes",delta)
 		time += delta
 		EnvironnementVar._update_difficulty(time)
 		if time>=60.0:
