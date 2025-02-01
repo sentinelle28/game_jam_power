@@ -4,6 +4,8 @@ extends Node
 var time_between_enemy:float = 1.5
 var difficulty:float = 1
 var power_spawn_time:float = 3.0
+var enemy_max_health_sup:int = 0
+
 
 const difficulty_scaling:float = 0.25
 const spawn_time_scale:float = 0.35 #x/2
@@ -13,6 +15,7 @@ func _reset()->void:
 	time_between_enemy = 1.5
 	difficulty = 1
 	power_spawn_time = 3.0
+	enemy_max_health_sup = 0
 	
 func _change_difficulty()->void:
 	_augment_difficulty(difficulty_scaling)
@@ -27,6 +30,7 @@ func _update_difficulty(time:float)->void:
 
 func _augment_difficulty(to_add:float)->void:
 	difficulty += to_add
+	enemy_max_health_sup += 1
 	
 	
 func get_spawn_value(value:float)->float:

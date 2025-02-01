@@ -5,6 +5,7 @@ func _ready() -> void:
 	health_component.connect("death",_death_procedure)
 	health_component.connect("took_damage",_on_damage_taken)
 	connect("area_entered",_on_area_entered)
+	health_component.max_health += EnvironnementVar.enemy_max_health_sup
 
 func _on_damage_taken()->void:
 	AudioController._play("hit")

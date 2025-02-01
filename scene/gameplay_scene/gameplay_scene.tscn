@@ -5,16 +5,16 @@
 [ext_resource type="Script" path="res://scene/gameplay_scene/enemy_spawner.gd" id="4_y7hli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1111"]
-size = Vector2(66, 1287)
+size = Vector2(66, 825.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w2fh"]
-size = Vector2(2880, 64)
+size = Vector2(1432, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvfds"]
-size = Vector2(1264, 32)
+size = Vector2(552, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vlyy"]
-size = Vector2(56, 682)
+size = Vector2(56, 293)
 
 [node name="gameplay_scene" type="Node2D"]
 script = ExtResource("1_675iu")
@@ -22,8 +22,8 @@ script = ExtResource("1_675iu")
 [node name="background" type="ColorRect" parent="."]
 offset_left = -8.0
 offset_top = -8.0
-offset_right = 1160.0
-offset_bottom = 656.0
+offset_right = 504.0
+offset_bottom = 272.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
@@ -34,19 +34,19 @@ metadata/_edit_lock_ = true
 [node name="enemy_boundary" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_boundary"]
-position = Vector2(-864, 304)
+position = Vector2(-464, 99.125)
 shape = SubResource("RectangleShape2D_o1111")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="enemy_boundary"]
-position = Vector2(2080, 312)
+position = Vector2(984, 104)
 shape = SubResource("RectangleShape2D_o1111")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="enemy_boundary"]
-position = Vector2(608, -296)
+position = Vector2(236, -344)
 shape = SubResource("RectangleShape2D_5w2fh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="enemy_boundary"]
-position = Vector2(608, 936)
+position = Vector2(288, 544)
 shape = SubResource("RectangleShape2D_5w2fh")
 
 [node name="bullet_boundary" type="Area2D" parent="."]
@@ -54,28 +54,29 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_boundary"]
-position = Vector2(568, -24)
+position = Vector2(212, -24)
 shape = SubResource("RectangleShape2D_hvfds")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bullet_boundary"]
-position = Vector2(576, 672)
+position = Vector2(248, 280)
 shape = SubResource("RectangleShape2D_hvfds")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="bullet_boundary"]
-position = Vector2(-36, 331)
+position = Vector2(-40, 136)
 shape = SubResource("RectangleShape2D_6vlyy")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="bullet_boundary"]
-position = Vector2(1184, 320)
+position = Vector2(512, 130.5)
 shape = SubResource("RectangleShape2D_6vlyy")
 
 [node name="enemy_stocker" type="Node2D" parent="."]
 
 [node name="enemy_spawner" type="Node2D" parent="." node_paths=PackedStringArray("player", "enemy_stocker")]
-position = Vector2(576, 320)
+position = Vector2(224, 128)
 script = ExtResource("4_y7hli")
 player = NodePath("../player")
 enemy_stocker = NodePath("../enemy_stocker")
+radius = 500
 
 [node name="Timer" type="Timer" parent="enemy_spawner"]
 one_shot = true
@@ -87,7 +88,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="player" parent="." instance=ExtResource("1_p24uq")]
-position = Vector2(576, 320)
+position = Vector2(224, 128)
 
 [connection signal="area_entered" from="enemy_boundary" to="." method="_on_enemy_boundary_area_entered"]
 [connection signal="area_entered" from="bullet_boundary" to="." method="_on_area_2d_area_entered"]

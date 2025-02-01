@@ -6,8 +6,8 @@
 script = ExtResource("1_ocuf8")
 
 [node name="task_stocker" type="VBoxContainer" parent="."]
-offset_right = 192.0
-offset_bottom = 112.0
+offset_right = 128.0
+offset_bottom = 77.0
 
 [node name="task_1" type="Label" parent="task_stocker"]
 layout_mode = 2

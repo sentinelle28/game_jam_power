@@ -34,6 +34,14 @@ AudioController="*res://autoload/audio_controller/audioController.tscn"
 GlobalTimer="*res://autoload/global_timer/global_timer.tscn"
 ParticleSpawner="*res://autoload/particle/particle_spawner.gd"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_sfxr/plugin.cfg")
@@ -61,5 +69,11 @@ shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/stretch/mode="canvas_items"
+textures/size/window_height_override=1080
+textures/size/window_width_override=1920
+textures/size/viewport_height=270
+textures/size/viewport_width=480

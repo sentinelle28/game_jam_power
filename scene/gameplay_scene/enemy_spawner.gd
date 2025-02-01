@@ -4,7 +4,7 @@ extends Node2D
 @export var enemy_stocker:Node2D
 var time_to_wait:float = 5.0
 var max_to_spawn:int = 3
-var radius:int = 1200
+@export var radius:int = 1200
 
 func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
