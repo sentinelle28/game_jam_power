@@ -18,3 +18,5 @@ func _play(name_of_sfx:String)->void:
 			$player_hit.play()
 		"explosion":
 			$explosion.play()
+		"one hp":
+			$one_hp.play()

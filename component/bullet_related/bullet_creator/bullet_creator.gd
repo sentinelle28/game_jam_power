@@ -8,7 +8,7 @@ class_name BulletCreator
 
 func _shoot(direction:Vector2)->void:
 	var new_child:Bullet = bullet_ref.instantiate()
-	StockerRef.get_bullet_stocker().add_child(new_child)
+	StockerRef.get_bullet_stocker().call_deferred("add_child",new_child)
 	new_child.global_position = global_position + radius*direction
 	new_child._set_direction(direction)
 	

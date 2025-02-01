@@ -2,7 +2,7 @@ extends Node
 
 signal gen_new_task
 var number_of_task_completed:int = 0
-var number_of_task_needed_for_artifact:int = 3
+var number_of_task_needed_for_artifact:int = 5
 var number_of_task_to_gen:int = 3
 
 var current_task:Array[TaskStrategyPattern] = []

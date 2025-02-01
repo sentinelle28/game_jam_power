@@ -1,7 +1,7 @@
 extends TaskStrategyPattern
 
 class_name KillTask
-@export var number_to_kill:int = 3
+@export var number_to_kill:int = 10
 
 func _personal_init()->void:
 	EventListener.connect("player_kill_enemy",_update_task)

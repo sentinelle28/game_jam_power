@@ -2,7 +2,7 @@ extends TaskStrategyPattern
 
 class_name Dash
 
-var number_to_dash:int = 5
+var number_to_dash:int = 7
 
 func _personal_init()->void:
 	EventListener.connect("player_dash",_update_task)

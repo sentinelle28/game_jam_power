@@ -36,6 +36,12 @@ func _on_hit()->void:
 	AudioController._play("player hit")
 	for elt:OnPlayerHitUpgrade in on_player_hit_upgrade:
 		elt._apply_change(self)
+	if health_component.health <= 2:
+		AudioController._play("one hp")
+	
+func _on_dash()->void:
+	for elt:OnPlayerDash in on_player_dash:
+		elt._apply_change(self)
 	
 	
 func _reset()->void:
@@ -80,6 +86,7 @@ func _dash()->float:
 		is_invicible = true
 		EventListener.emit_signal("player_dash")
 		AudioController._play("dash")
+		_on_dash()
 		return dash_mult
 	elif is_invicible:
 		return dash_mult
@@ -95,10 +102,14 @@ func _shoot()->void:
 		if bullet_timer.time_left == 0:
 			var direction:Vector2 = (global_position.direction_to(get_global_mouse_position()))
 			_shoot_toward(direction)
+			bullet_timer.start(shooting_cooldown)
+			AudioController._play("shoot")
 
 
 func _shoot_toward(direction:Vector2):
+	var n_direction:Vector2 = direction
+	if direction == Vector2.ZERO:
+		n_direction = Vector2(1,1)
 	for i:int in range(bullet_to_shoot):
-		bullet_creator._shoot(direction)
-		bullet_timer.start(shooting_cooldown)
-		AudioController._play("shoot")
+		bullet_creator._shoot(n_direction)
+		

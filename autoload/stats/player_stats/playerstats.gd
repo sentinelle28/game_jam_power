@@ -1,14 +1,14 @@
 extends Node
 
-var speed:int = 200
+var speed:int = 170
 var max_acceleration:float = 1.0
 var max_health:int = 10
 var dash_mult:float = 1.1
-var dash_invicibility_frame:float = 0.5
+var dash_invicibility_frame:float = 0.2
 var dash_recovery:float = 1.0
 var crit_change:int = 0
 var crit_damage:float = 2.0
-var shooting_cooldown:float = 0.5
+var shooting_cooldown:float = 0.7
 var bullet_size:int = 1
 var bullet_speed:int = 230
 var bullet_pierce:int = 0
