@@ -12,10 +12,12 @@ func _custom_show()->void:
 	
 	get_tree().paused = true
 	$Panel/VBoxContainer/Label.text = "You completed " + str(Taskmanager.number_of_task_completed)
+	$Panel/VBoxContainer/Label.text += " task"
 	$Panel/VBoxContainer/Label2.text = "You survive  " 
 	$Panel/VBoxContainer/Label2.text += str(GlobalTimer.minute) +":"
 	$Panel/VBoxContainer/Label2.text += str(int(GlobalTimer.get_time())) +"s"
-	#$Panel/VBoxContainer/Label3.text = "You killed " + 
+	$Panel/VBoxContainer/Label3.text = "You erased " + str(EventListener.num_enemy) 
+	$Panel/VBoxContainer/Label3.text += " numbers"
 	show()
 	
 
@@ -26,4 +28,5 @@ func _on_button_pressed() -> void:
 	EnvironnementVar._reset()
 	Taskmanager._gen_new_task()
 	GlobalTimer._reset()
+	EventListener._reset()
 	emit_signal("reset")

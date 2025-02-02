@@ -1,5 +1,7 @@
 extends Node
 
+var can_reload:bool = true
+
 func _play(name_of_sfx:String)->void:
 	match name_of_sfx:
 		"hit":
@@ -22,3 +24,10 @@ func _play(name_of_sfx:String)->void:
 			$one_hp.play()
 		"click":
 			$click.play()
+		"background":
+			$background.play()
+
+
+func _on_background_finished() -> void:
+	if can_reload:
+		_play("background")

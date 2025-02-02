@@ -9,6 +9,7 @@ func _ready() -> void:
 	StockerRef.particle_stocker = $particle_stocker
 	Taskmanager._gen_new_task()
 	GlobalTimer._start()
+	TaskOverlay.show()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Bullet:

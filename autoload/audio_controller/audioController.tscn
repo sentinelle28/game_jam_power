@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0f2r163l5eov"]
+[gd_scene load_steps=13 format=3 uid="uid://0f2r163l5eov"]
 
 [ext_resource type="Script" path="res://autoload/audio_controller/audio_controller.gd" id="1_1g7ex"]
 [ext_resource type="AudioStream" uid="uid://bwq45je5g8osk" path="res://asset/audio/hit.tres" id="2_sqh2y"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://uyxr1citgpf2" path="res://asset/audio/explosion_bis.tres" id="9_64ges"]
 [ext_resource type="AudioStream" uid="uid://cqni0tdtl0t6k" path="res://asset/audio/one_hp.tres" id="10_5unwj"]
 [ext_resource type="AudioStream" uid="uid://dloqtpbe4kjjv" path="res://asset/audio/click.tres" id="11_y2ymb"]
+[ext_resource type="AudioStream" uid="uid://t2rn22d46fds" path="res://asset/audio/Sketchbook 2024-12-21.ogg" id="12_lgr5m"]
 
 [node name="Audio" type="Node"]
 process_mode = 3
@@ -38,15 +39,25 @@ bus = &"sfx"
 
 [node name="enemy_shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0sfga")
+bus = &"sfx"
 
 [node name="player_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_yuwv8")
+bus = &"sfx"
 
 [node name="explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_64ges")
+bus = &"sfx"
 
 [node name="one_hp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_5unwj")
+bus = &"sfx"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_y2ymb")
+bus = &"sfx"
+
+[node name="background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lgr5m")
+
+[connection signal="finished" from="background" to="." method="_on_background_finished"]

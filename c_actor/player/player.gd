@@ -9,7 +9,7 @@ class_name Player
 
 @export var shooting_cooldown:float = 0.5
 @export var dash_mult:float = 2.0
-@export var dash_invicibility_frame:float = 0.5
+@export var dash_invicibility_frame:float = 0.3
 @export var dash_recovery:float = 1.0
 
 @export var bullet_size:float = 1
@@ -67,7 +67,7 @@ func _process(delta: float) -> void:
 	
 
 func _move(delta:float)->void:
-	var direction:Vector2 = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+	var direction:Vector2 = Input.get_vector("move_left","move_right","move_up","move_down")
 	if direction == Vector2.ZERO:
 		current_acceleration = 0
 	else:
