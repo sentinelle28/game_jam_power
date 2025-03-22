@@ -7,7 +7,7 @@ class_name Player
 @onready var screen_size:Vector2 = get_viewport_rect().size
 @export var gradient_texture:GradientTexture1D
 
-@export var shooting_cooldown:float = 0.5
+@export var shooting_cooldown:float = 1.5
 @export var dash_mult:float = 2.0
 @export var dash_invicibility_frame:float = 0.3
 @export var dash_recovery:float = 1.0
@@ -31,6 +31,8 @@ func _ready() -> void:
 	DeathPanel.connect("reset",_reset)
 	health_component.connect("death",_death)
 	health_component.connect("took_damage",_on_hit)
+	health_component.health = health_component.max_health
+	_reset()
 	
 func _on_hit()->void:
 	AudioController._play("player hit")
@@ -50,6 +52,8 @@ func _reset()->void:
 		set(property,Playerstats.player_properties[property])
 	on_player_hit_upgrade.clear()
 	on_player_dash.clear()
+	health_component.health = health_component.max_health
+	health_component._show_health()
 
 func _update_stats(upgrade:UpgradeStrategyPattern)->void:
 	if upgrade is HealthUpgrade:

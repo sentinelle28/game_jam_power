@@ -76,7 +76,7 @@ func _init_task()->void:
 
 
 func _update_task_requiered()->void:
-	number_of_task_needed_for_artifact =get_new_task_for_artifact(EnvironnementVar.difficulty)
+	number_of_task_needed_for_artifact = 5 + int(EnvironnementVar.difficulty/2)
 	
 func get_new_task_for_artifact(value:float)->int:
 	var calc_value:float = 0.25*(value**2) + 3

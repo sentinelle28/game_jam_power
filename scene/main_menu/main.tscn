@@ -50,5 +50,16 @@ text = "Play"
 layout_mode = 2
 text = "Tutorial"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = 47.0
+grow_horizontal = 2
+text = "The zero aberation"
+
 [connection signal="pressed" from="CanvasLayer/TextureRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TextureRect/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

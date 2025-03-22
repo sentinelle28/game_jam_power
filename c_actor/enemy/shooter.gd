@@ -1,7 +1,7 @@
 extends BaseEnemy
 
 @export var bullet:PackedScene
-@export var range:float = 300
+@export var range:float = 170
 @export var wait_time:float = 0.4
 var cooldown:float = 0
 
