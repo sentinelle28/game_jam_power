@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvy5bq7h17xym"]
 
-[ext_resource type="Script" path="res://autoload/pause_menu/death/death_panel.gd" id="1_kjgmv"]
+[ext_resource type="Script" uid="uid://cqjrq1qmbumit" path="res://autoload/pause_menu/death/death_panel.gd" id="1_kjgmv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wam3b"]
 bg_color = Color(0.527048, 0.639531, 0.481566, 1)

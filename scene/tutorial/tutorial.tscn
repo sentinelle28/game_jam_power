@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://sqexa1km37a0"]
 
-[ext_resource type="Script" path="res://scene/tutorial/tutorial.gd" id="1_2ui7e"]
+[ext_resource type="Script" uid="uid://k6y1tw1wgpl2" path="res://scene/tutorial/tutorial.gd" id="1_2ui7e"]
 [ext_resource type="PackedScene" uid="uid://ilu10aeoctvd" path="res://c_actor/player/player.tscn" id="1_mnp0u"]
 
 [sub_resource type="Animation" id="Animation_wk6vl"]
@@ -59,8 +59,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ojywe"]
 _data = {
-"RESET": SubResource("Animation_wk6vl"),
-"tutorial": SubResource("Animation_gum84")
+&"RESET": SubResource("Animation_wk6vl"),
+&"tutorial": SubResource("Animation_gum84")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_sngto"]

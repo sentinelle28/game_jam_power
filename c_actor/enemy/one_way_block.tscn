@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnqya42njg26n"]
 
-[ext_resource type="Script" path="res://c_actor/enemy/one_way_block.gd" id="1_d0gen"]
-[ext_resource type="Script" path="res://component/basic/health_component/health_component.gd" id="2_acl43"]
-[ext_resource type="Script" path="res://component/basic/damage_component/damage_component.gd" id="3_ib6tg"]
+[ext_resource type="Script" uid="uid://uebb7mlkxwtf" path="res://c_actor/enemy/one_way_block.gd" id="1_d0gen"]
+[ext_resource type="Script" uid="uid://8ik8jd4sc71j" path="res://component/basic/health_component/health_component.gd" id="2_acl43"]
+[ext_resource type="Script" uid="uid://bis33w5tdhkt0" path="res://component/basic/damage_component/damage_component.gd" id="3_ib6tg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_saewj"]
 font_size = 25

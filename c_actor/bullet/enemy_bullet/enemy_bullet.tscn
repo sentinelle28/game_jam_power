@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0kxul807qlno"]
 
-[ext_resource type="Script" path="res://c_actor/bullet/normal_bullet.gd" id="1_t1hm5"]
-[ext_resource type="Script" path="res://component/basic/damage_component/bullet_damage_component.gd" id="2_w8jhw"]
+[ext_resource type="Script" uid="uid://ba1gtcf5lpf6c" path="res://c_actor/bullet/normal_bullet.gd" id="1_t1hm5"]
+[ext_resource type="Script" uid="uid://bnv7qa7cc0syv" path="res://component/basic/damage_component/bullet_damage_component.gd" id="2_w8jhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3n4s"]
 

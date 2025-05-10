@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7dow6ohxoi1v"]
 
-[ext_resource type="Script" path="res://component/hit_particle/hit_particle.gd" id="1_0tt42"]
+[ext_resource type="Script" uid="uid://chcggfs67pnuw" path="res://component/hit_particle/hit_particle.gd" id="1_0tt42"]
 
 [node name="hit_particle" type="CPUParticles2D"]
 emission_shape = 2

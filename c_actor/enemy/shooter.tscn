@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bxh2rv6s1amt6"]
 
-[ext_resource type="Script" path="res://c_actor/enemy/shooter.gd" id="1_dpaag"]
+[ext_resource type="Script" uid="uid://dmfernj230b3m" path="res://c_actor/enemy/shooter.gd" id="1_dpaag"]
 [ext_resource type="PackedScene" uid="uid://d0kxul807qlno" path="res://c_actor/bullet/enemy_bullet/enemy_bullet.tscn" id="2_61s0p"]
-[ext_resource type="Script" path="res://component/basic/health_component/health_component.gd" id="2_knroe"]
+[ext_resource type="Script" uid="uid://8ik8jd4sc71j" path="res://component/basic/health_component/health_component.gd" id="2_knroe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37r4g"]
 

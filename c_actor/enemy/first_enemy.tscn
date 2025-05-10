@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://y3ggji4f2ywo"]
 
-[ext_resource type="Script" path="res://c_actor/enemy/first_enemy.gd" id="1_e4utm"]
-[ext_resource type="Script" path="res://component/basic/health_component/health_component.gd" id="2_31821"]
-[ext_resource type="Script" path="res://component/basic/damage_component/damage_component.gd" id="3_grwgx"]
+[ext_resource type="Script" uid="uid://b5tp40lasicc0" path="res://c_actor/enemy/first_enemy.gd" id="1_e4utm"]
+[ext_resource type="Script" uid="uid://8ik8jd4sc71j" path="res://component/basic/health_component/health_component.gd" id="2_31821"]
+[ext_resource type="Script" uid="uid://bis33w5tdhkt0" path="res://component/basic/damage_component/damage_component.gd" id="3_grwgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjphi"]
 
